@@ -1,6 +1,7 @@
 # AirQo-Africa-Air-Quality-Prediction-Challenge
 
 collaboration: [AirQo Africa](https://www.airqo.net/), [Mozilla Foundation](https://foundation.mozilla.org/en/), [Makerere University Artificial Intellegence Lab](https://air.ug/)
+<img width="328" alt="Screenshot 2024-08-11 at 18 29 45" src="https://github.com/user-attachments/assets/ef0696bd-92a7-48b0-9990-6744a49dd0c0"> <img width="233" alt="Screenshot 2024-08-11 at 18 29 58" src="https://github.com/user-attachments/assets/8984f882-a2db-48ba-bc37-14e8e120bfe3">
 
 ## Background
 
