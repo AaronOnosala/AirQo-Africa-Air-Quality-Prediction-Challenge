@@ -1,4 +1,4 @@
-# AirQo-Africa-Air-Quality-Prediction-Challenge
+# AirQo Africa, Air Quality And Pollution Estimation Project
 
 collaboration: [AirQo Africa](https://www.airqo.net/), [Mozilla Foundation](https://foundation.mozilla.org/en/), [Makerere University Artificial Intellegence Lab](https://air.ug/)
 
