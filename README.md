@@ -48,8 +48,8 @@ The neural networks are trained using the backpropagation algorithm and gradient
 
 The decision forests are trained with the Random Forest (RF) algorithm. Unlike Backpropagation, the training of RF does not "transmit" the loss gradient to from its output to its input. For this reasons, the classical RF algorithm cannot be used to train or fine-tune a neural network underneath. In other words, the "decision forest" stages cannot be used to train the "Learnable NN pre-processing block".
 
-1. Train the preprocessing and neural networks stage.
-2. Train the decision forest stages.
+i. Train the preprocessing and neural networks stage.
+ii. Train the decision forest stages.
 
  3. __Training and Validation:__
 
