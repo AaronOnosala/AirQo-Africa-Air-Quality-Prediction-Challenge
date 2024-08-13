@@ -17,6 +17,9 @@ The project aimed to estimate PM2.5 levels from satellite observations based on 
 To tackle this challenge, we utilized several machine learning models, ultimately finding that the TensorFlow Decision Forest model was the most suitable for this specific task. The models were trained using a dataset of satellite-derived AOD and corresponding PM2.5 ground observations from the selected cities.
 
 ## AI Methods Applied
+## AI Framework Used In This Project
+<img width="741" alt="Screenshot 2024-08-12 at 11 46 01" src="https://github.com/user-attachments/assets/47820292-eb6f-44ce-b30d-65314b952538">
+
  1. __Data Collection and Preprocessing:__
 
 Collected satellite-derived AOD data and corresponding PM2.5 ground observations for the eight cities. Cleaned and preprocessed the data to ensure consistency and accuracy. 
@@ -25,12 +28,32 @@ Collected satellite-derived AOD data and corresponding PM2.5 ground observations
 
 Evaluated multiple machine learning models, including linear regression, random forests, and neural networks. Selected the TensorFlow Decision Forest model for its superior performance in handling structured data and capturing complex relationships between features.
 
+#### TensorFlow Decision Forest Network Structure
+You can visually follow the tree structure. In this tree, the first decision is based on the bill length. 
+
+<img width="704" alt="Screenshot 2024-08-13 at 09 19 34" src="https://github.com/user-attachments/assets/7fe26f87-d1b2-4cfc-b405-bf748194a4f6">
+
+Here is the structure of the model we built in this project:
+
+<img width="578" alt="Screenshot 2024-08-13 at 09 20 41" src="https://github.com/user-attachments/assets/b7ed12f6-2c91-4f5c-8913-8e05d0df311a">
+
+The composed model has three stages:
+
+1. The first stage is a preprocessing layer composed of a neural network and common to all the models in the next stage. In practice, such a preprocessing layer could either be a pre-trained embedding to fine-tune, or a randomly initialized neural network.
+
+2. The second stage is an ensemble of two decision forest and two neural network models.
+
+3. The last stage averages the predictions of the models in the second stage. It does not contain any learnable weights.
+The neural networks are trained using the backpropagation algorithm and gradient descent. This algorithm has two important properties: (1) The layer of neural network can be trained if its receives a loss gradient (more precisely, the gradient of the loss according to the layer's output), and (2) the algorithm "transmits" the loss gradient from the layer's output to the layer's input (this is the "chain rule"). For these two reasons, Backpropagation can train together multiple layers of neural networks stacked on top of each other.
+
+The decision forests are trained with the Random Forest (RF) algorithm. Unlike Backpropagation, the training of RF does not "transmit" the loss gradient to from its output to its input. For this reasons, the classical RF algorithm cannot be used to train or fine-tune a neural network underneath. In other words, the "decision forest" stages cannot be used to train the "Learnable NN pre-processing block".
+
+1. Train the preprocessing and neural networks stage.
+2. Train the decision forest stages.
+
  3. __Training and Validation:__
 
 Employed the leave-one-out cross-validation technique to train the model, a resource-intensive but robust method for small datasets. This technique involves training the model on all cities except one and then validating it on the excluded city, repeating this process for each city.
-
-## AI Framework Used In This Project
-<img width="741" alt="Screenshot 2024-08-12 at 11 46 01" src="https://github.com/user-attachments/assets/47820292-eb6f-44ce-b30d-65314b952538">
 
 ## Challenges Faced
 
