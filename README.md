@@ -29,7 +29,7 @@ Evaluated multiple machine learning models, including linear regression, random 
 
 Employed the leave-one-out cross-validation technique to train the model, a resource-intensive but robust method for small datasets. This technique involves training the model on all cities except one and then validating it on the excluded city, repeating this process for each city.
 
-## Framework Used In This Project
+## AI Framework Used In This Project
 <img width="741" alt="Screenshot 2024-08-12 at 11 46 01" src="https://github.com/user-attachments/assets/47820292-eb6f-44ce-b30d-65314b952538">
 
 ## Challenges Faced
